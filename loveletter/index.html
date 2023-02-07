@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">##</span><br/>
+			<span class="comments"># 我是一个程序员</span><br/>
+			<span class="comments"># 所以我在情人节这天这样给你写了封信</span><br/>
+			<span class="comments">##</span><br/>
+			i = Boy(<span class="string">"余晓明"</span>);<br/>
+			u = Girl(<span class="string">"江莹"</span>);<br/>
+			<span class="comments"># 我在2023年的1月24日遇见了你. </span><br/>
+			i.meet(u)<br/>
+			<span class="comments"># 那天，我们聊的很开心，我似乎还挺喜欢你的. </span><br/>
+			i.confess(u)<br/>
+			<span class="comments"># 后来，我们经历了种种，也一起聊了很多很多. </span><br/>
+			i.with(u)<br/>
+			<span class="comments"># 在2023年1月29日那天남친两个字符永久写入了我的数据库.</span><br/>
+			u.accepted(i)<br/>
+			<span class="comments"># 从那天开始，我每天都过着很开心的日子.</span><br/>
+			happy(u, i)<br/>
+			<span class="comments"># 我期待着每个与你视频的夜晚.</span><br/>
+			video(u, i)<br/>
+			<span class="comments"># 我期待着每个与你相拥的周末.</span><br/>
+			hug(u, i)<br/>
+			<span class="comments"># 我期待着和你一起生活带给我的安心.</span><br/>
+			life(u, i)<br/>
+			<span class="comments"># 我期待着和你在一起的未来的每一天.</span><br/>
+			future(u, i)<br/>
+			<span class="comments"># 或许未来我们会有冲突和意见.</span><br/>
+			conflict(u, i, sometimes=<span class="keyword">True</span>)<br/>
+			<span class="comments"># 但是我们会一起去解决他们一起创造越来越多的我们的回忆.</span><br/>
+			u.in_love_with(i) <br/>
+			i.in_love_with(u) <br/>
+			<span class="comments"># 你是我人生中最大的美好.</span><br/>
+			while <span class="keyword">True</span>:<br/>
+			<span class="placeholder"></span><span class="keyword">if</span> u.with(i):<br/>
+			<span class="placeholder"></span><span class="placeholder"></span>u = everything<br/>
+			<span class="placeholder"></span><span class="keyword">else</span>:<br/>
+			<span class="placeholder"></span><span class="placeholder"></span>everything = u<br/>
+			<span class="comments"># 谢谢你,我爱你.</span><br/>
+			i.marry(u, in_the_future=<span class="keyword">True</span>)<br/>
+			i.live_happily_forever_with(u)<br/>
+			<span class="comments"># I love you forever.</span><br/>
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					Ying, I have fallen in love with you for
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					Love u forever and ever.<br/>
+					<div class="signature">- Xiaoming Yu</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var offsetX = $("#loveHeart").width() / 2;
+	var offsetY = $("#loveHeart").height() / 2 - 55;
+	var together = new Date();
+	// 此处月份介于 0 ~ 11 之间。用本地时间表示，如 8 月要用 7 表示。
+	together.setFullYear(2023, 0, 24);
+	together.setHours(15);
+	together.setMinutes(0);
+	together.setSeconds(0);
+	together.setMilliseconds(0);
+
+	if (!document.createElement('canvas').getContext) {
+		var msg = document.createElement("div");
+		msg.id = "errorMsg";
+		msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+		document.body.appendChild(msg);
+		$("#code").css("display", "none")
+		$("#copyright").css("position", "absolute");
+		$("#copyright").css("bottom", "10px");
+		document.execCommand("stop");
+	} else {
+		setTimeout(function () {
+			startHeartAnimation();
+		}, 5000);
+
+		timeElapse(together);
+		setInterval(function () {
+			timeElapse(together);
+		}, 500);
+
+		adjustCodePosition();
+		$("#code").typewriter();
+	}
+</script>
+</body>
+</html>
