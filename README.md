@@ -1,3 +1,2 @@
 # My Love Story
-Site: http://love.yuxiaoming.com
-
+Site: golming.github.io
